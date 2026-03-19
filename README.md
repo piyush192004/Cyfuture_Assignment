@@ -27,11 +27,11 @@ This AI agent retrieves academic records and attendance data, identifies trends 
 ┌─────────────────────────────────────────────────────────────┐
 │                        INPUT LAYER                          │
 │                                                             │
-│   ┌──────────────────┐        ┌──────────────────┐         │
-│   │   Academic DB    │        │  Attendance DB   │         │
-│   │  (Grades, GPA,   │        │  (Logs, Records) │         │
-│   │   Courses)       │        │                  │         │
-│   └────────┬─────────┘        └────────┬─────────┘         │
+│   ┌──────────────────┐        ┌──────────────────┐          │
+│   │   Academic DB    │        │  Attendance DB   │          │
+│   │  (Grades, GPA,   │        │  (Logs, Records) │          │
+│   │   Courses)       │        │                  │          │
+│   └────────┬─────────┘        └────────┬─────────┘          │
 │            └──────────────┬────────────┘                    │
 │                    ┌──────▼──────┐                          │
 │                    │    Data     │◄──── Policy PDFs /       │
@@ -45,9 +45,9 @@ This AI agent retrieves academic records and attendance data, identifies trends 
 │                                                             │
 │   ┌─────────────────────────────────────────────────────┐   │
 │   │                  Data Validator                     │   │
-│   │   • Check completeness of records                  │   │
-│   │   • Check historical depth (min 2 semesters)       │   │
-│   │   • Flag missing / corrupt entries                 │   │
+│   │   • Check completeness of records                   │   │
+│   │   • Check historical depth (min 2 semesters)        │   │
+│   │   • Flag missing / corrupt entries                  │   │
 │   └─────────────────────┬───────────────────────────────┘   │
 │                         │                                   │
 │             ┌───────────▼────────────┐                      │
@@ -64,16 +64,16 @@ This AI agent retrieves academic records and attendance data, identifies trends 
 │                                                             │
 │   ┌─────────────────────────────────────────────────────┐   │
 │   │                  Trend Analyzer                     │   │
-│   │   • Subject-wise performance over time             │   │
-│   │   • Attendance vs. grade correlation               │   │
-│   │   • Semester-over-semester trend lines             │   │
+│   │   • Subject-wise performance over time              │   │
+│   │   • Attendance vs. grade correlation                │   │
+│   │   • Semester-over-semester trend lines              │   │
 │   └─────────────────────┬───────────────────────────────┘   │
 │                         │                                   │
 │   ┌─────────────────────▼───────────────────────────────┐   │
 │   │               Weak Area Identifier                  │   │
-│   │   • Subjects scoring below threshold (<60%)        │   │
-│   │   • At-risk student detection                      │   │
-│   │   • Performance gap analysis                       │   │
+│   │   • Subjects scoring below threshold (<60%)         │   │
+│   │   • At-risk student detection                       │   │
+│   │   • Performance gap analysis                        │   │
 │   └─────────────────────┬───────────────────────────────┘   │
 │                         │                                   │
 │             ┌───────────▼────────────┐                      │
@@ -82,7 +82,7 @@ This AI agent retrieves academic records and attendance data, identifies trends 
 │             │  are required?         │                      │
 │             └────┬──────────┬────────┘                      │
 │           Academic        Policy                            │
-│           Data only       Docs too                         │
+│           Data only       Docs too                          │
 └─────────────┼─────────────┼───────────────────────────────--┘
               │             │
               ▼             ▼
@@ -95,12 +95,12 @@ This AI agent retrieves academic records and attendance data, identifies trends 
 │   │  (Statistics + ML) │    │   (LLM + Vector Store)    │   │
 │   └─────────┬──────────┘    └──────────┬────────────────┘   │
 │             └──────────────┬───────────┘                    │
-│                            │                               │
-│              ┌─────────────▼───────────┐                   │
-│              │    DECISION GATE 3      │                   │
-│              │  Student or Faculty?    │                   │
-│              └──────┬─────────┬────────┘                   │
-└─────────────────────┼─────────┼───────────────────────────-┘
+│                            │                                │
+│              ┌─────────────▼───────────┐                    │
+│              │    DECISION GATE 3      │                    │
+│              │  Student or Faculty?    │                    │
+│              └──────┬─────────┬────────┘                    │
+└─────────────────────┼─────────┼────────────────────────────-┘
                       │         │
                       ▼         ▼
 ┌─────────────────────────────────────────────────────────────┐
